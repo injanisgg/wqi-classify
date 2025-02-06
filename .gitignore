@@ -1,0 +1,26 @@
+# Environment files
+.env
+.flaskenv
+instance/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+env/
+venv/
+
+# Tailwind & Node.js
+node_modules/
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Other
+*.sqlite3
+*.db

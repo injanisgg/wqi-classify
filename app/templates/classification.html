@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- content -->
+<!-- header -->
+<div class="flex flex-col justify-center items-center gap-5 h-40 mx-20 xl:mt-20 bg-black rounded-xl">
+    <h1 class="font-bold text-white text-5xl font-serif">Classification</h1>
+    <p class="text-primary-green font-semibold font-sans">This page is for classify the water quality index</p>
+</div>
+<!-- end header -->
+
+<!-- form -->
+<div class="flex flex-col justify-center items-center gap-7 bg-stone-200 w-fit h-fit p-10 mt-20 mx-20 rounded-xl">
+    <h1 class="text-3xl font-bold text-black font-serif">Input the data</h1>
+    <form id="classify-form" method="POST" class="flex flex-col justify-center items-center gap-6">
+        <div class="flex flex-wrap justify-center px-10 gap-x-10 gap-y-5">
+            <div class="flex flex-col gap-2">
+                <label for="aluminium" class="text-black font-semibold">Aluminium (Al)</label>
+                <input type="number" step="0.01" name="aluminium" id="aluminium" placeholder="Enter value mg/L" class="w-40 h-10 text-xs text-gray-500 px-4 rounded-full border border-black">    
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="ammonia" class="text-black font-semibold">Ammonia (NH3)</label>
+                <input type="number" step="0.001" name="ammonia" id="ammonia" placeholder="Enter value mg/L" class="w-40 h-10 text-xs text-gray-500 px-4 rounded-full border border-black">    
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="arsenic" class="text-black font-semibold">Arsenic (As)</label>
+                <input type="number" step="0.001" name="arsenic" id="arsenic" placeholder="Enter value mg/L" class="w-40 h-10 text-xs text-gray-500 px-4 rounded-full border border-black">    
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="bacteria" class="text-black font-semibold">Bacteria (Bact.)</label>
+                <input type="number" step="0.001" name="bacteria" id="bacteria" placeholder="Enter value CFU/mL" class="w-40 h-10 text-xs text-gray-500 px-4 rounded-full border border-black">    
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="barium" class="text-black font-semibold">Barium (Ba)</label>
+                <input type="number" step="0.001" name="barium" id="barium" placeholder="Enter value mg/L" class="w-40 h-10 text-xs text-gray-500 px-4 rounded-full border border-black">    
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="cadmium" class="text-black font-semibold">Cadmium (Cd)</label>
+                <input type="number" step="0.001" name="cadmium" id="cadmium" placeholder="Enter value mg/L" class="w-40 h-10 text-xs text-gray-500 px-4 rounded-full border border-black">    
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="chloramine" class="text-black font-semibold">Chloramine (NHCl2)</label>
+                <input type="number" step="0.001" name="chloramine" id="chloramine" placeholder="Enter value mg/L" class="w-40 h-10 text-xs text-gray-500 px-4 rounded-full border border-black">    
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="chromium" class="text-black font-semibold">Chromium (Cr)</label>
+                <input type="number" step="0.001" name="chromium" id="chromium" placeholder="Enter value mg/L" class="w-40 h-10 text-xs text-gray-500 px-4 rounded-full border border-black">    
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="copper" class="text-black font-semibold">Copper (Cu)</label>
+                <input type="number" step="0.001" name="copper" id="copper" placeholder="Enter value mg/L" class="w-40 h-10 text-xs text-gray-500 px-4 rounded-full border border-black">    
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="lead" class="text-black font-semibold">Lead (Pb)</label>
+                <input type="number" step="0.001" name="lead" id="lead" placeholder="Enter value mg/L" class="w-40 h-10 text-xs text-gray-500 px-4 rounded-full border border-black">    
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="nitrates" class="text-black font-semibold">Nitrates (NO3-)</label>
+                <input type="number" step="0.001" name="nitrates" id="nitrates" placeholder="Enter value mg/L" class="w-40 h-10 text-xs text-gray-500 px-4 rounded-full border border-black">    
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="nitrites" class="text-black font-semibold">Nitrites (NO2-)</label>
+                <input type="number" step="0.001" name="nitrites" id="nitrites" placeholder="Enter value mg/L" class="w-40 h-10 text-xs text-gray-500 px-4 rounded-full border border-black">    
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="perchlorate" class="text-black font-semibold">Perchlorate (ClO4-)</label>
+                <input type="number" step="0.001" name="perchlorate" id="perchlorate" placeholder="Enter value mg/L" class="w-40 h-10 text-xs text-gray-500 px-4 rounded-full border border-black">    
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="radium" class="text-black font-semibold">Radium (Ra)</label>
+                <input type="number" step="0.001" name="radium" id="radium" placeholder="Enter value mg/L" class="w-40 h-10 text-xs text-gray-500 px-4 rounded-full border border-black">    
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="selenium" class="text-black font-semibold">Selenium (Se)</label>
+                <input type="number" step="0.001" name="selenium" id="selenium" placeholder="Enter value mg/L" class="w-40 h-10 text-xs text-gray-500 px-4 rounded-full border border-black">    
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="silver" class="text-black font-semibold">Silver (Ag)</label>
+                <input type="number" step="0.001" name="silver" id="silver" placeholder="Enter value mg/L" class="w-40 h-10 text-xs text-gray-500 px-4 rounded-full border border-black">    
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="uranium" class="text-black font-semibold">Uranium (U)</label>
+                <input type="number" step="0.001" name="uranium" id="uranium" placeholder="Enter value mg/L" class="w-[360px] h-10 text-xs text-gray-500 px-4 rounded-full border border-black">    
+            </div>
+            <div class="flex flex-col gap-2">
+                <label for="viruses" class="text-black font-semibold">Viruses (Vir.)</label>
+                <input type="number" step="0.001" name="viruses" id="viruses" placeholder="Enter value CFU/mL" class="w-[360px] h-10 text-xs text-gray-500 px-4 rounded-full border border-black">    
+            </div>
+        </div>
+        <button id="classify-button" type="submit" class="text-white bg-black font-semibold h-10 rounded-2xl w-[47.5rem]">Classify</button>
+    </form>
+</div>
+<!-- end form -->
+
+<!-- table -->
+ <div class="flex flex-col justify-center items-center gap-10 xl:mt-20">
+    <p class="text-black text-3xl font-bold font-serif">Classification Result</p>
+    <table id="result-table" class="table-auto border-collapse border border-primary-green text-center">
+        <thead class="font-serif">
+            <tr>
+                <th class="border-2 border-gray-500 bg-black p-2 text-primary-green">No</th>
+                <th class="border-2 border-gray-500 bg-black p-2 text-primary-green">Al</th>
+                <th class="border-2 border-gray-500 bg-black p-2 text-primary-green">NH3</th>
+                <th class="border-2 border-gray-500 bg-black p-2 text-primary-green">As</th>
+                <th class="border-2 border-gray-500 bg-black p-2 text-primary-green">Bact.</th>
+                <th class="border-2 border-gray-500 bg-black p-2 text-primary-green">Ba</th>
+                <th class="border-2 border-gray-500 bg-black p-2 text-primary-green">Cd</th>
+                <th class="border-2 border-gray-500 bg-black p-2 text-primary-green">NH2Cl</th>
+                <th class="border-2 border-gray-500 bg-black p-2 text-primary-green">Cr</th>
+                <th class="border-2 border-gray-500 bg-black p-2 text-primary-green">Cu</th>
+                <th class="border-2 border-gray-500 bg-black p-2 text-primary-green">Pb</th>
+                <th class="border-2 border-gray-500 bg-black p-2 text-primary-green">NO3-</th>
+                <th class="border-2 border-gray-500 bg-black p-2 text-primary-green">NO2-</th>
+                <th class="border-2 border-gray-500 bg-black p-2 text-primary-green">ClO4-</th>
+                <th class="border-2 border-gray-500 bg-black p-2 text-primary-green">Ra</th>
+                <th class="border-2 border-gray-500 bg-black p-2 text-primary-green">Se</th>
+                <th class="border-2 border-gray-500 bg-black p-2 text-primary-green">Ag</th>
+                <th class="border-2 border-gray-500 bg-black p-2 text-primary-green">U</th>
+                <th class="border-2 border-gray-500 bg-black p-2 text-primary-green">Vir.</th>
+                <th class="border-2 border-gray-500 bg-black p-2 text-yellow-500">Classify as</th>
+            </tr>
+        </thead>
+        <tbody id="result-body" class="font-sans text-sm"></tbody>
+    </table>
+ </div>
+<!-- end table -->
+
+<!-- end content -->
+
+<!-- script -->
+<script>
+    document.getElementById('classify-form').addEventListener('submit', async function (event) {
+        event.preventDefault(); // Mencegah refresh halaman
+
+        // Ambil data dari form
+        const formData = new FormData(event.target);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = parseFloat(value); // Konversi nilai ke float
+        });
+
+        // Kirim data ke backend
+        try {
+            const response = await fetch('/classify/predict', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                // Tampilkan hasil di tabel
+                updateResultTable(data, result.prediction);
+            } else {
+                console.error(result.error);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    });
+
+    let rowCount = 0; // Counter untuk nomor baris
+
+    function updateResultTable(inputData, prediction) {
+        const tbody = document.getElementById('result-body');
+        const row = document.createElement('tr');
+
+        // Tambahkan nomor ke kolom pertama
+        rowCount++;
+        const numberCell = document.createElement('td');
+        numberCell.textContent = rowCount;
+        numberCell.className = 'border-2 border-gray-500 p-2';
+        row.appendChild(numberCell);
+
+        // Tambahkan data input ke baris tabel
+        Object.values(inputData).forEach((value) => {
+            const cell = document.createElement('td');
+            cell.textContent = value;
+            cell.className = 'border-2 border-gray-500 p-2';
+            row.appendChild(cell);
+        });
+
+        // Konversi hasil prediksi menjadi "Safe" atau "Not Safe"
+        const predictionText = prediction === 'Safe' ? 'Safe' : 'Not Safe';
+
+        // Tambahkan hasil prediksi ke baris tabel
+        const predictionCell = document.createElement('td');
+        predictionCell.textContent = predictionText;
+        predictionCell.className = 'border-2 border-gray-500 p-2';
+        row.appendChild(predictionCell);
+
+        tbody.appendChild(row);
+    }
+</script>
+<!-- end script -->
+{% endblock %}

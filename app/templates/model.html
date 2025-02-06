@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- content -->
+<!-- header -->
+<div class="flex flex-col justify-center items-center gap-5 h-40 mx-20 xl:mt-20 bg-black rounded-xl">
+    <h1 class="font-bold text-white text-5xl font-serif">Model Information</h1>
+    <p class="text-primary-green font-semibold font-sans">This page is for informing about the model details</p>
+</div>
+<!-- end header -->
+
+<!-- method -->
+<v class="flex flex-col justify-center items-center mt-20">
+    <h1 class="text-3xl font-bold text-black font-serif">Methods and Results</h1>
+<div class="grid grid-cols-3 gap-10 w-[50rem] xl:mx-60 mt-10 text-center">
+    <div class="flex flex-col bg-stone-200 xl:w-52 xl:h-44 rounded-xl px-4 py-4 justify-center items-center">
+        <div class="relative">
+            <img src="{{ url_for('static', filename='img/lgbm.png') }}" alt="lgbm logo" class="xl:w-24 xl:h-24 object-cover z-0 rounded-xl">
+        </div>
+        <div class="font-semibold text-md z-10 underline text-black font-serif">Algorithm</div>
+        <p class="text-sm text-black pt-2 z-10 mb-8 font-sans">Light Gradient Boosting Machine Classifier</p>
+    </div>
+    <div class="flex flex-col bg-stone-200 xl:w-52 xl:h-44 rounded-xl px-4 py-4 justify-center items-center">
+        <div class="relative">
+            <img src="{{ url_for('static', filename='img/scaler.png') }}" alt="lgbm logo" class="xl:w-24 xl:h-24 object-cover z-0 rounded-xl">
+        </div>
+        <p class="font-semibold text-md z-10 underline text-black font-serif">Scaler</p>
+        <p class="text-sm text-black pt-2 z-10 font-sans mb-12">RobustScaler</p>
+    </div>
+    <div class="flex flex-col justify-center items-center bg-stone-200 xl:w-52 xl:h-44 rounded-xl px-4 py-4">
+        <div class="relative">
+            <img src="{{ url_for('static', filename='img/rfe.png') }}" alt="lgbm logo" class="xl:w-24 xl:h-24 object-cover z-0 rounded-xl">
+        </div>
+        <p class="font-semibold text-md z-10 underline text-black font-serif">Feature Selection</p>
+        <p class="text-sm text-black pt-2 z-10 font-sans mb-8">Recursive Feature Elimination</p>
+    </div>
+    <div class="flex flex-col justify-center items-center bg-stone-200 xl:w-52 xl:h-44 rounded-xl px-4 py-4">
+        <div class="relative">
+            <img src="{{ url_for('static', filename='img/smote.png') }}" alt="lgbm logo" class="xl:w-24 xl:h-24 object-cover z-0 rounded-xl">
+        </div>
+        <p class="font-semibold text-md z-10 underline text-black font-serif">Data Augmentation</p>
+        <p class="text-sm text-black pt-2 z-10 font-sans mb-7">Synthetic Minority Oversampling Technique</p>
+    </div>
+    <div class="flex flex-col justify-center items-center bg-stone-200 xl:w-52 xl:h-44 rounded-xl px-4 py-4">
+        <div class="relative">
+            <img src="{{ url_for('static', filename='img/optuna.png') }}" alt="lgbm logo" class="xl:w-24 xl:h-24 object-cover z-0 rounded-xl">
+        </div>
+        <p class="font-semibold text-md z-10 underline text-black font-serif">Optimizer</p>
+        <p class="text-sm text-black pt-2 z-10 font-sans mb-12">Optuna</p>
+    </div>
+    <div class="flex flex-col justify-center items-center bg-stone-200 xl:w-52 xl:h-44 rounded-xl px-4 py-4">
+        <div class="relative">
+            <img src="{{ url_for('static', filename='img/kaggle.png') }}" alt="lgbm logo" class="xl:w-24 xl:h-24 object-cover z-0 rounded-xl">
+        </div>
+        <p class="font-semibold text-md z-10 underline text-black font-serif">Dataset</p>
+        <p class="text-sm text-black pt-2 z-10 font-sans mb-8">Water Quality from Kaggle, Mssartypants.</p>
+    </div>
+</div>
+<!-- end method -->
+
+<!-- result -->
+ <div class="flex flex-wrap gap-10 justify-center mt-20">
+    <div class="flex flex-col gap-2">
+        <div class="relative">
+            <img src="{{ url_for('static', filename='img/conf-matrix.jpg') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
+        </div>
+        <p class="text-xl font-semibold text-black font-serif">Confussion Matrix of Proposed Model</p>
+        <p class="text-black font-sans xl:w-[30rem] text-justify">
+            This figure shows that the model is very accurate in detecting the class “Not Safe,” with 1401 correct predictions and only 16 errors. For the class "Safe," the model produced 155 correct predictions but still had 27 errors. Even though the data was balanced using SMOTE oversampling, the model was still superior in detecting "Not Safe." This may be due to the complexity of the features in the "Safe" class, so further analysis is needed to improve the prediction accuracy in this class.</p>
+    </div>
+    <div class="flex flex-col gap-2">
+        <div class="relative">
+            <img src="{{ url_for('static', filename='img/comparative.png') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
+        </div>
+        <p class="text-xl font-semibold text-black font-serif">Accuracy Comparison</p>
+        <p class="text-black font-sans xl:w-[30rem] text-justify">Based on the graph, LGBM combined with the “RFE SMOTE OPTUNA” method gives the highest accuracy of 98.01%, indicating the combination of LGBM with RFE, SMOTE, and OPTUNA is very effective for Water Quality Index classification. The "SMOTE" method has the lowest accuracy, which is 97.15%. Overall, all methods produced high accuracy (above 97%), with the combination of techniques tending to improve model performance.</p>    
+    </div>
+    <div class="flex flex-col gap-2">
+        <div class="relative">
+            <img src="{{ url_for('static', filename='img/class-report.jpg') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
+        </div>
+        <p class="text-xl font-semibold text-black font-serif">Classification Report of Proposed Model</p>
+        <p class="text-black font-sans xl:w-[30rem] text-justify">
+            The model performed very well for the “Not Safe” class as the precision and recall were close to 1. However, the performance for the “Safe” class was slightly lower, indicating potential data imbalance or difficulty for the model to detect the class. The overall accuracy reached 97.31%.</p>    
+    </div>
+    <div class="flex flex-col gap-2">
+        <div class="relative">
+            <img src="{{ url_for('static', filename='img/avg-cv.jpg') }}" alt="water" class="xl:w-[30rem] xl:h-64 object-cover rounded-xl border border-slate-500">
+        </div>
+        <p class="text-xl font-semibold text-black font-serif">Average Cross-validation of Proposed Model</p>
+        <p class="text-black font-sans xl:w-[30rem] text-justify">
+            The model performed very well and consistently on the training data based on the average cross-validation score. This indicates that the model has good generalization to the training data and can be expected to perform well on unseen data, although it needs to be further tested to avoid potential overfitting.</p>    
+    </div>
+ </div>
+<!-- end result -->
+<!-- end content -->
+{% endblock %}

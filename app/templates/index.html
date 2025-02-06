@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- content header -->
+<div class="bg-black h-[35rem] w-full xl:mt-20">
+    <div class="flex justify-around xl:px-10 py-20 items-center">
+        <div class="flex flex-col text-center items-center gap-5">
+            <div class="flex flex-col text-3xl font-bold gap-2 font-serif">
+                <span class="text-white">Water Quality Index</span>
+                <span class="text-primary-green">Classification Using LGBM</span>
+                <span class="text-white">with RFE Feature Selection</span>
+                <span class="text-primary-green">SMOTE Oversampling Technique</span>
+                <span class="text-white">and Optuna Hyperparamter Optimization</span>
+            </div>
+            <div class="flex flex-col font-sm text-white font-sans">
+                <p>
+                    Written by Sugini Injani <br>
+                    Major in Informatics Engineering <br>
+                    Faculty Mathematics and Natural Sciences <br>
+                    Universitas Negeri Semarang <br>
+                </p>
+            </div>
+            <!-- button -->
+            <button
+                class="xl:w-56 py-2 px-4 flex items-center justify-start gap-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100">
+                <i class="fa-solid fa-circle-chevron-right text-black"></i>
+                <a href="{{ url_for('classify') }}" class="font-sans hover:cursor-pointer">Start Classification</a>
+            </button>
+            <!-- end button -->
+        </div>
+        <img src="{{ url_for('static', filename='img/unnes-index.png') }}" class="w-96" alt="logo unnes">
+    </div>
+</div>
+<!-- end content 1 -->
+
+<!-- content problem -->
+<!-- title -->
+<div class="flex flex-col gap-2 justify-center text-center xl:mt-20 font-serif">
+    <p class="text-primary-green text-2xl font-bold">The Problem</p>
+    <p class="text-black text-3xl font-bold">
+        Why water quality index <br>
+        is important?
+    </p>
+</div>
+<!-- end title -->
+<!-- card -->
+<div class="grid grid-cols-3 justify-center gap-20 xl:gap-x-20 xl:gap-y-10 xl:mx-40 xl:mt-10">
+    <div class="bg-slate-200 rounded-xl flex flex-col justify-start gap-2 p-4 w-60 xl:w-72">
+        <i class="fa-solid fa-briefcase-medical p-2 bg-black rounded-full text-white w-fit"></i>
+        <p class="text-black font-semibold font-serif">Health and Human Survival</p>
+        <p class="text-black text-xs font-sans">
+            Clean and safe water is essential for sustaining human life and preventing the spread of diseases such as
+            diarrhea, cholera, typhoid, and hepatitis. Proper sanitation safeguards communities from health risks caused
+            by contaminated water.
+        </p>
+    </div>
+    <div class="bg-slate-200 rounded-xl flex flex-col justify-start gap-2 p-4 w-60 xl:w-72">
+        <i class="fa-solid fa-seedling p-2 bg-black rounded-full text-white w-fit"></i>
+        <p class="text-black font-semibold font-serif">Prevention of Global Environmental</p>
+        <p class="text-black text-xs font-sans">
+            According to WHO and UNICEF reports, poor water quality and inadequate sanitation result in millions of
+            deaths annually worldwide, including thousands in Indonesia. Monitoring water quality is a crucial step in
+            reducing these adverse effects.
+        </p>
+    </div>
+    <div class="bg-slate-200 rounded-xl flex flex-col justify-start gap-2 p-4 w-60 xl:w-72">
+        <i class="fa-solid fa-umbrella p-2 bg-black rounded-full text-white w-fit"></i>
+        <p class="text-black font-semibold font-serif">Resilience to Climate Change</p>
+        <p class="text-black text-xs font-sans">
+            Water acts as a critical link between the environment, ecosystems, climate, and society. Monitoring water
+            quality supports efforts to mitigate and adapt to the impacts of climate change.
+        </p>
+    </div>
+    <div class="bg-slate-200 rounded-xl flex flex-col justify-start gap-2 p-4 w-60 xl:w-72">
+        <i class="fa-solid fa-droplet py-2 px-3 bg-black rounded-full text-white w-fit"></i>
+        <p class="text-black font-semibold font-serif">Sustainability of Water Resources</p>
+        <p class="text-black text-xs font-sans">Routine monitoring of WQI helps ensure the sustainability of clean water
+            availability, both in quantity and quality, which is a fundamental need for environmental and human life.
+        </p>
+    </div>
+    <div class="bg-slate-200 rounded-xl flex flex-col justify-start gap-2 p-4 w-60 xl:w-72">
+        <i class="fa-solid fa-hand-holding-droplet p-2 bg-black rounded-full text-white w-fit"></i>
+        <p class="text-black font-semibold font-serif">Support for Water Purification Technologies</p>
+        <p class="text-black text-xs font-sans">Detecting contamination through WQI monitoring enables the development
+            of water purification technologies, such as distillation and deionization, ensuring water is reused safely
+            and efficiently.</p>
+    </div>
+    <div class="bg-slate-200 rounded-xl flex flex-col justify-start gap-2 p-4 w-60 xl:w-72">
+        <i class="fa-solid fa-handshake p-2 bg-black rounded-full text-white w-fit"></i>
+        <p class="text-black font-semibold font-serif">Basis for Decision-Making in Water Management</p>
+        <p class="text-black text-xs font-sans">WQI provides actionable information for identifying water quality issues
+            quickly, aiding decision-making in water resource management and public policy planning.</p>
+    </div>
+</div>
+<!-- end card -->
+<!-- end content problem -->
+
+<!-- content quote pict -->
+<div class="flex bg-black justify-center gap-10 items-center p-8 xl:mt-20">
+    <img src="{{ url_for('static', filename='img/pict-home.png') }}" class="w-96" alt="people drinking">
+    <div class="flex flex-col gap-5">
+        <p class="text-3xl font-bold text-white items-center font-serif">
+            Monitoring water <br>
+            quality index
+        </p>
+        <p class="text-white w-96 font-sans">
+            is a critical step in ensuring the sustainability of clean water resources and safeguarding public health.
+            It helps identify water contamination and provides the basis for timely intervention to prevent the spread
+            of waterborne diseases.
+        </p>
+        <!-- button -->
+        <button
+            class="xl:w-56 py-2 px-4 flex items-center justify-start gap-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100">
+            <i class="fa-solid fa-circle-chevron-right text-black"></i>
+            <a href="{{ url_for('classify') }}" class="font-sans hover:cursor-pointer">Start Classification</a>
+        </button>
+        <!-- end button -->
+    </div>
+</div>
+<!-- end content quote pict -->
+
+<!-- content unep -->
+<!-- title -->
+<div class="flex flex-col gap-2 justify-center text-center xl:mt-20 font-serif">
+    <p class="text-primary-green text-2xl font-bold">United Nations Environment Programme</p>
+    <p class="text-black text-3xl font-bold">New Health Risk Hot Spot</p>
+</div>
+<!-- end title -->
+<!-- card 2 -->
+<div class="flex justify-center items-center gap-10 mt-10">
+    <div class="flex flex-col bg-black xl:w-52 rounded-xl text-white px-4 py-8">
+        <p class="font-semibold text-lg font-serif">Linked</p>
+        <p class="text-sm pt-4 pb-20 font-sans">Human health is directly or indirectly linked to water quality.</p>
+    </div>
+    <i class="fa-solid fa-arrow-right-long fa-2xl"></i>
+    <div class="flex flex-col bg-black xl:w-52 rounded-xl text-white px-4 py-8">
+        <p class="font-semibold text-lg font-serif">Vulnerable</p>
+        <p class="text-sm pt-4 pb-6 font-sans">Countries with low freshwater monitoring capabilities are unprepared for
+            the health impacts that will occur.</p>
+    </div>
+    <i class="fa-solid fa-arrow-right-long fa-2xl"></i>
+    <div class="flex flex-col bg-black xl:w-52 rounded-xl text-white px-4 py-8">
+        <p class="font-semibold text-lg font-serif">Crisis</p>
+        <p class="text-sm pt-4 font-sans">Facing severe climate impacts while experiencing rapid population growth,
+            urbanization, and increasing wastewater challenge.</p>
+    </div>
+    <i class="fa-solid fa-arrow-right-long fa-2xl"></i>
+    <div class="flex flex-col bg-black xl:w-52 rounded-xl text-white px-4 py-8">
+        <p class="font-semibold text-lg font-serif">Monitor</p>
+        <p class="text-sm pt-4 font-sans">Prioritizing water quality monitor will help UNEP to understand how our
+            freshwaters are changing and how to minimize health risk.</p>
+    </div>
+</div>
+<!-- end card 2 -->
+<!-- end content unep -->
+{% endblock %}

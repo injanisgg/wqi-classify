@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- content -->
+<!-- header -->
+<div class="flex flex-col justify-center items-center gap-5 h-40 mx-20 xl:mt-20 bg-black rounded-xl">
+    <h1 class="font-bold text-white text-5xl font-serif">About The System</h1>
+    <p class="text-primary-green font-semibold font-sans">This page is for informing about the system details</p>
+</div>
+<!-- end header -->
+
+<!-- details -->
+<div class="flex flex-col mt-20 justify-center items-center">
+    <div class="flex flex-col gap-2 mb-3">
+        <h4 class="text-xl text-black font-semibold font-serif">01. The Developer</h4>
+        <p class="w-[55rem] text-black text-justify font-sans">Her name is Sugini Injani who is a student of Informatics Engineering at Universitas Negeri Semarang. She created this website for her thesis entitled “Water quality index classification using LGBM with RFE feature selection SMOTE oversampling technique and Optuna hyperparameter optimization”. You can find the detail of her information on the footer of this website.</p>
+    </div>
+    <div class="flex flex-col gap-2 mb-3">
+        <h4 class="text-xl text-black font-semibold font-serif">02. The Objective</h4>
+        <p class="w-[55rem] text-black text-justify font-sans">This website is a medium for predicting and classifying WQI with optimal accuracy using the LGBM algorithm combined with RFE, SMOTE, and Optuna.</p>
+    </div>
+    <div class="flex flex-col gap-2 mb-3">
+        <h4 class="text-xl text-black font-semibold font-serif">03. How to use</h4>
+        <div class="w-[55rem] text-black text-justify font-sans">
+            <ul class="list-disc pl-5 space-y-2">
+                <li>Collect data numeric on substances or microorganisms that exist in water, namely aluminium, ammonia, arsenic, bacteria, barium, cadmium, chloramine, chromium, copper, lead, nitrates, nitrites, perchlorate, radium, selenium, silver, uranium, and viruses.</li>
+                <li>Go to page classification and input the data in the form. Make sure you input the numeric data.</li>
+                <li>After you finished, click the “classify” button. This button will predict and classify your data.</li>
+                <li>The result will be shown on the classification results table.</li>
+                <li>If the result is “safe” the water is safe for drinking and other purposes. But if the results is “not safe” the water is not safe to drink or other purposes.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- end details -->
+
+<!-- tools -->
+<div class="flex flex-col justify-center items-center mt-20">
+    <h1 class="text-3xl font-bold text-black font-serif">Tools in This Project</h1>
+</div>
+<div class="flex justify-center gap-14 mt-10">
+    <div class="flex flex-col gap-2">
+        <div class="relative">
+            <img src="{{ url_for('static', filename='img/flask.png') }}" alt="" class="xl:w-32 xl:h-32 object-cover rounded-xl border border-gray-500">
+        </div>
+        <p class="font-semibold text-black font-serif">Flask</p>
+    </div>
+    <div class="flex flex-col gap-2">
+        <div class="relative">
+            <img src="{{ url_for('static', filename='img/scikit.png') }}" alt="" class="xl:w-32 xl:h-32 object-cover rounded-xl border border-gray-500">
+        </div>
+        <p class="font-semibold text-black font-serif">Scikit-learn</p>
+    </div>
+    <div class="flex flex-col gap-2">
+        <div class="relative">
+            <img src="{{ url_for('static', filename='img/tailwind.png') }}" alt="" class="xl:w-32 xl:h-32 object-cover rounded-xl border border-gray-500">
+        </div>
+        <p class="font-semibold text-black font-serif">Tailwindcss</p>
+    </div>
+    <div class="flex flex-col gap-2">
+        <div class="relative">
+            <img src="{{ url_for('static', filename='img/fontawesome.jpg') }}" alt="" class="xl:w-32 xl:h-32 object-cover rounded-xl border border-gray-500">
+        </div>
+        <p class="font-semibold text-black font-serif">Fontawesome</p>
+    </div>
+    <div class="flex flex-col gap-2">
+        <div class="relative">
+            <img src="{{ url_for('static', filename='img/vercel.png') }}" alt="" class="xl:w-32 xl:h-32 object-cover rounded-xl border border-gray-500">
+        </div>
+        <p class="font-semibold text-black font-serif">Vercel</p>
+    </div>
+</div>
+<!-- end tools -->
+<!-- end content -->
+{% endblock %}
