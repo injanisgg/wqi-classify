@@ -25,3 +25,5 @@ Thumbs.db
 *.sqlite3
 *.db
 venv/
+env/
+node_modules/

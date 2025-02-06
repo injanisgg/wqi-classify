@@ -1,6 +1,6 @@
-env
+env/
 .vscode
-node_modules
+node_modules/
 public
 *.pyc
 __pycache__/
@@ -9,3 +9,4 @@ __pycache__/
 *.csv
 venv/
 *.md
+*.h5
